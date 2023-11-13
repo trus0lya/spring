@@ -4,18 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "passenger", schema = "train", catalog = "")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-public class UserEntity {
+public class PassengerEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -41,5 +40,4 @@ public class UserEntity {
     @Column(name = "mail", nullable = false, length = 30)
     @JsonProperty("mail")
     private String mail;
-
 }
