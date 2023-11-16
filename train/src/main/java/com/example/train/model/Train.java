@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class Train {
     private int id;
     private String trainNumber;
-    private String trainType;
+    private Object trainType;
     private int numberOfWagons;
 }

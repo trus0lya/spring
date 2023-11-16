@@ -32,6 +32,4 @@ public class TrainEntity {
     @Column(name = "number_of_wagons", nullable = false)
     @JsonProperty("number_of_wagons")
     private int numberOfWagons;
-
-
 }

@@ -1,4 +1,4 @@
-package com.example.train.controller;
+package com.example.train.controller.station;
 
 import com.example.train.entity.StationEntity;
 import com.example.train.service.StationService;
