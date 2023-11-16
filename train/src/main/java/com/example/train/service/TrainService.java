@@ -9,5 +9,4 @@ public interface TrainService {
     List<Train> getAll();
     boolean addTrain(Train train);
     boolean deleteTrainById(int id);
-    boolean isExist(Train train);
 }

@@ -60,8 +60,4 @@ public class TrainServiceImpl implements TrainService {
         return false;
     }
 
-    @Override
-    public boolean isExist(Train train) {
-        return trainRepository.existsTrainEntityByTrainNumber(train.getTrainNumber());
-    }
 }
