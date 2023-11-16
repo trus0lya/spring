@@ -35,5 +35,4 @@ public class DiscountsEntity {
     @Column(name = "discount_amount", nullable = false, precision = 2)
     @JsonProperty("discount_amount")
     private BigDecimal discountAmount;
-
 }
