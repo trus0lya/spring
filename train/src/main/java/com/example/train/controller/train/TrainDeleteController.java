@@ -24,8 +24,7 @@ public class TrainDeleteController {
 
         if (isDeleted) {
             return ResponseEntity.ok("Train deleted successfully.");
-        } else {
-            return ResponseEntity.badRequest().body("Train with the given ID not found.");
         }
+        return ResponseEntity.badRequest().body("Train with the given ID not found.");
     }
 }

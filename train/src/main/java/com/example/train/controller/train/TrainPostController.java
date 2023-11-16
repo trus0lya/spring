@@ -26,8 +26,7 @@ public class TrainPostController {
         boolean isAdded = trainService.addTrain(train);
         if (isAdded) {
             return ResponseEntity.ok("Train added successfully.");
-        } else {
-            return ResponseEntity.badRequest().body("Train with the given number already exists.");
         }
+        return ResponseEntity.badRequest().body("Train with the given number already exists.");
     }
 }

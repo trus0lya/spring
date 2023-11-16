@@ -25,9 +25,9 @@ public class StationGetController {
         Station station = stationService.getStationById(id);
         if (station != null) {
             return new ResponseEntity<>(station, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
     }
 
     @RequestMapping(value = StationGetURI.GET_ALL_STATIONS, method = RequestMethod.GET)
@@ -35,8 +35,8 @@ public class StationGetController {
         List<Station> stations = stationService.getAll();
         if(stations.size() == 0) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(stations, HttpStatus.OK);
         }
+        return new ResponseEntity<>(stations, HttpStatus.OK);
+
     }
 }

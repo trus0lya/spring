@@ -27,9 +27,8 @@ public class TrainGetController {
         Train train = trainService.getTrainById(id);
         if (train != null) {
             return new ResponseEntity<>(train, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @RequestMapping(value = TrainGetURI.GET_ALL_TRAINS, method = RequestMethod.GET)
@@ -37,8 +36,7 @@ public class TrainGetController {
         List<Train> trains = trainService.getAll();
         if(trains.size() == 0) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(trains, HttpStatus.OK);
         }
+        return new ResponseEntity<>(trains, HttpStatus.OK);
     }
 }

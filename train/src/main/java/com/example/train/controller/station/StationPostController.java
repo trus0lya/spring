@@ -27,8 +27,7 @@ public class StationPostController {
         boolean isAdded = stationService.addStation(station);
         if (isAdded) {
             return ResponseEntity.ok("Station added successfully.");
-        } else {
-            return ResponseEntity.badRequest().body("Station with the given code already exists.");
         }
+        return ResponseEntity.badRequest().body("Station with the given code already exists.");
     }
 }
