@@ -5,7 +5,10 @@ import com.example.train.model.Route;
 import com.example.train.service.StationService;
 import com.example.train.service.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
+@Component
 public class RouteMapper {
 
     private final TrainService trainService;
