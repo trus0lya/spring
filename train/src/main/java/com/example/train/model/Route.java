@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
@@ -14,8 +15,8 @@ public class Route {
     private String title;
     private int departureStation;
     private int arrivalStation;
-    private Time departureTime;
-    private Time arrivalTime;
+    private Timestamp departureTime;
+    private Timestamp arrivalTime;
     private int routeLength;
     private Time duration;
     private int price;
