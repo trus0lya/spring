@@ -1,6 +1,7 @@
 package com.example.train.mapper;
 
 import com.example.train.entity.CarriageEntity;
+import com.example.train.entity.TrainEntity;
 import com.example.train.model.Carriage;
 import com.example.train.service.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,8 @@ public class CarriageMapper {
         carriageEntity.setId(carriage.getId());
         carriageEntity.setCarriageNumber(carriage.getCarriageNumber());
         carriageEntity.setType(carriage.getType());
-        carriageEntity.setTrain(TrainMapper.trainToTrainEntity(trainService.getTrainById(carriage.getTrainId())));
+        TrainEntity train = TrainMapper.trainToTrainEntity(carriage.getTrain());
+        carriageEntity.setTrain(train);
         carriageEntity.setNumberOfSeats(carriage.getNumberOfSeats());
         return carriageEntity;
     }
@@ -28,7 +30,7 @@ public class CarriageMapper {
         carriage.setId(carriageEntity.getId());
         carriage.setCarriageNumber(carriageEntity.getCarriageNumber());
         carriage.setType(carriageEntity.getType());
-        carriage.setTrainId(carriageEntity.getTrain().getId());
+        carriage.setTrain(TrainMapper.trainEntityToTrain(carriageEntity.getTrain()));
         carriage.setNumberOfSeats(carriageEntity.getNumberOfSeats());
         return carriage;
     }

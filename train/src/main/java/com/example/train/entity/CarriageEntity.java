@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Objects;
 
 @Entity
 @Table(name = "carriage", schema = "train", catalog = "")

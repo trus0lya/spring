@@ -30,6 +30,14 @@ public class CarriageServiceImpl implements CarriageService {
     }
 
     @Override
+    public CarriageEntity getCarriageEntityById(int id) {
+        if(carriageRepository.existsById(id)) {
+            return carriageRepository.getReferenceById(id);
+        }
+        return null;
+    }
+
+    @Override
     public Train getTrainByCarriageId(int id) {
         if(carriageRepository.existsById(id)) {
             return TrainMapper.trainEntityToTrain(carriageRepository.getReferenceById(id).getTrain());

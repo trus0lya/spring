@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Carriage {
     private int id;
-    private int trainId;
+    private Train train;
     private int carriageNumber;
     private Object type;
     private int numberOfSeats;
