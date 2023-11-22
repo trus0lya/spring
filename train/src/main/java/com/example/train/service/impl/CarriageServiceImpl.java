@@ -7,7 +7,6 @@ import com.example.train.model.Carriage;
 import com.example.train.model.Train;
 import com.example.train.repository.CarriageRepository;
 import com.example.train.service.CarriageService;
-import com.example.train.service.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
