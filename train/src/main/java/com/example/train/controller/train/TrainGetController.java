@@ -1,6 +1,8 @@
 package com.example.train.controller.train;
 
+import com.example.train.controller.passenger.PassengerGetController;
 import com.example.train.model.Train;
+import com.example.train.service.PassengerService;
 import com.example.train.service.impl.TrainServiceImpl;
 import com.example.train.uri.train.TrainGetURI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class TrainGetController {
     private final TrainServiceImpl trainService;
 
     @Autowired
-    public TrainGetController(TrainServiceImpl trainService) {
+    public TrainGetController(TrainServiceImpl trainService, PassengerService passengerService) {
         this.trainService = trainService;
     }
 

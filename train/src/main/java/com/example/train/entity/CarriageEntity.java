@@ -2,10 +2,7 @@ package com.example.train.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Objects;
 
@@ -40,8 +37,4 @@ public class CarriageEntity {
     @JsonProperty("number_of_seats")
     private int numberOfSeats;
 
-    @Basic
-    @Column(name = "remaining_seats", nullable = false)
-    @JsonProperty("remaining_seats")
-    private int remainingSeats;
 }

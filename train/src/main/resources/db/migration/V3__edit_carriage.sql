@@ -1,0 +1,1 @@
+ALTER TABLE carriage DROP COLUMN remaining_seats;
