@@ -1,10 +1,8 @@
 package com.example.train.controller.passenger;
 
 import com.example.train.model.Passenger;
-import com.example.train.model.Train;
 import com.example.train.service.PassengerService;
 import com.example.train.uri.passenger.PassengerGetURI;
-import com.example.train.uri.train.TrainGetURI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

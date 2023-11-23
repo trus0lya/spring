@@ -7,14 +7,7 @@ import com.example.train.service.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CarriageMapper {
-    private final TrainService trainService;
-
-    @Autowired
-    public CarriageMapper(TrainService trainService) {
-        this.trainService = trainService;
-    }
-
-    public CarriageEntity carriageToCarriageEntity (Carriage carriage) {
+    public static CarriageEntity carriageToCarriageEntity (Carriage carriage) {
         CarriageEntity carriageEntity = new CarriageEntity();
         carriageEntity.setId(carriage.getId());
         carriageEntity.setCarriageNumber(carriage.getCarriageNumber());

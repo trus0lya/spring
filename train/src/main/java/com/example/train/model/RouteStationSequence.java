@@ -12,8 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 public class RouteStationSequence {
     private int id;
-    private int route;
-    private List<Integer> station;
+    private Route route;
+    private List<Station> stations;
     private int sequenceNumber;
     private int distanceToNextStation;
     private Time timeToNextStation;

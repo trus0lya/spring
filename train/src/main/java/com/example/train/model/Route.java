@@ -13,12 +13,12 @@ import java.sql.Timestamp;
 public class Route {
     private int id;
     private String title;
-    private int departureStation;
-    private int arrivalStation;
+    private Station departureStation;
+    private Station arrivalStation;
     private Timestamp departureTime;
     private Timestamp arrivalTime;
     private int routeLength;
     private Time duration;
     private int price;
-    private int train;
+    private Train train;
 }

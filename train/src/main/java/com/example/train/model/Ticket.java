@@ -13,9 +13,9 @@ import java.util.List;
 public class Ticket {
     private int id;
     private int ticketNumber;
-    private int passenger;
-    private List<Integer> discounts;
-    private int routes;
-    private int carriage;
+    private Passenger passenger;
+    private List<Discount> discounts;
+    private Route route;
+    private Carriage carriage;
     private double price;
 }
