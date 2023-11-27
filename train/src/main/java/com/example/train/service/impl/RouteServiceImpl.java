@@ -14,20 +14,18 @@ import java.sql.Timestamp;
 @Service
 public class RouteServiceImpl implements RouteService {
     private final RouteRepository routeRepository;
-    private final  RouteMapper routeMapper;
     private final StationService stationService;
 
     @Autowired
-    public RouteServiceImpl(RouteRepository routeRepository, RouteMapper routeMapper, StationService stationService) {
+    public RouteServiceImpl(RouteRepository routeRepository, StationService stationService) {
         this.routeRepository = routeRepository;
-        this.routeMapper = routeMapper;
         this.stationService = stationService;
     }
 
     @Override
     public Route getRouteById(int id) {
         if(routeRepository.existsById(id)) {
-           return routeMapper.routeEntityToRoute(routeRepository.getReferenceById(id));
+           return RouteMapper.routeEntityToRoute(routeRepository.getReferenceById(id));
         }
         return null;
     }
@@ -35,7 +33,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Route getRouteByTitle(String title) {
         if(routeRepository.existsByTitle(title)) {
-            return routeMapper.routeEntityToRoute(routeRepository.getByTitle(title));
+            return RouteMapper.routeEntityToRoute(routeRepository.getByTitle(title));
         }
         return null;
     }
@@ -43,7 +41,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Station getDepartureStationByTitle(String title) {
         if(routeRepository.existsByTitle(title)) {
-            int stationId = routeMapper.routeEntityToRoute(routeRepository.getByTitle(title)).getDepartureStation();
+            int stationId = routeRepository.getByTitle(title).getDepartureStation().getId();
             if(stationService.getStationById(stationId) != null) {
                 return stationService.getStationById(stationId);
             }
@@ -55,7 +53,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Station getArrivalStationByTitle(String title) {
         if(routeRepository.existsByTitle(title)) {
-            int stationId = routeMapper.routeEntityToRoute(routeRepository.getByTitle(title)).getArrivalStation();
+            int stationId = routeRepository.getByTitle(title).getArrivalStation().getId();
             if(stationService.getStationById(stationId) != null) {
                 return stationService.getStationById(stationId);
             }
@@ -67,7 +65,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public int getRouteLengthByTitle(String title) {
         if(routeRepository.existsByTitle(title)) {
-            return routeMapper.routeEntityToRoute(routeRepository.getByTitle(title)).getRouteLength();
+            return routeRepository.getByTitle(title).getRouteLength();
         }
         return -1;
     }
@@ -75,7 +73,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public int getPriceById(int id) {
         if(routeRepository.existsById(id)) {
-            return routeMapper.routeEntityToRoute(routeRepository.getReferenceById(id)).getPrice();
+            return routeRepository.getReferenceById(id).getPrice();
         }
         return -1;
     }
@@ -83,7 +81,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Timestamp getDepartureTimeById(int id) {
         if(routeRepository.existsById(id)) {
-            return routeMapper.routeEntityToRoute(routeRepository.getReferenceById(id)).getDepartureTime();
+            return routeRepository.getReferenceById(id).getDepartureTime();
         }
         return null;
     }
@@ -91,7 +89,7 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Timestamp getArrivalTimeById(int id) {
         if(routeRepository.existsById(id)) {
-            return routeMapper.routeEntityToRoute(routeRepository.getReferenceById(id)).getArrivalTime();
+            return routeRepository.getReferenceById(id).getArrivalTime();
         }
         return null;
     }
