@@ -20,13 +20,13 @@ public class RouteStationSequenceEntity {
     @JsonProperty("id")
     private int id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "route_id")
     private RoutesEntity route;
 
-    @ManyToMany
+    @OneToOne
     @JoinColumn(name = "station_id")
-    private List<StationEntity> station;
+    private StationEntity station;
 
     @Basic
     @Column(name = "sequence_number", nullable = false)

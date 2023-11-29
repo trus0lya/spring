@@ -21,11 +21,7 @@ public class RouteStationSequenceMapper {
         routeStationSequenceEntity.setTimeToNextStation
                 (routeStationSequence.getTimeToNextStation());
         routeStationSequenceEntity.setRoute(RouteMapper.RouteToRouteEntity(routeStationSequence.getRoute()));
-        List<StationEntity> stationEntities = new ArrayList<>();
-        for(int i = 0; i < routeStationSequence.getStations().size(); ++i) {
-            stationEntities.add(StationMapper.stationToStationEntity(routeStationSequence.getStations().get(i)));
-        }
-        routeStationSequenceEntity.setStation(stationEntities);
+        routeStationSequenceEntity.setStation(StationMapper.stationToStationEntity(routeStationSequence.getStation()));
         return routeStationSequenceEntity;
     }
 
@@ -36,11 +32,7 @@ public class RouteStationSequenceMapper {
         routeStationSequence.setDistanceToNextStation(routeStationSequenceEntity.getDistanceToNextStation());
         routeStationSequence.setTimeToNextStation(routeStationSequenceEntity.getTimeToNextStation());
         routeStationSequence.setRoute(RouteMapper.routeEntityToRoute(routeStationSequenceEntity.getRoute()));
-        List<Station> stations = new ArrayList<>();
-        for(int i = 0; i < routeStationSequenceEntity.getStation().size(); ++i) {
-            stations.add(StationMapper.stationEntityToStation(routeStationSequenceEntity.getStation().get(i)));
-        }
-        routeStationSequence.setStations(stations);
+        routeStationSequence.setStation(StationMapper.stationEntityToStation(routeStationSequenceEntity.getStation()));
         return routeStationSequence;
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 public class RouteStationSequence {
     private int id;
     private Route route;
-    private List<Station> stations;
+    private Station station;
     private int sequenceNumber;
     private int distanceToNextStation;
     private Time timeToNextStation;
